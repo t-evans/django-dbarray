@@ -15,7 +15,7 @@ __all__ = (
 
 def require_postgres(connection):
     engine = connection.settings_dict['ENGINE']
-    if 'psycopg2' not in engine and 'postgis' not in engine:
+    if 'psycopg2' not in engine and 'postgis' not in engine and 'django_postgrespool' not in engine:
         raise FieldError("Array fields are currently implemented only for PostgreSQL/psycopg2")
 
 class Cast(object):
